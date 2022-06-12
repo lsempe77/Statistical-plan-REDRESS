@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Quantitative data plan analysis</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Lucas Sempe / Yan Ding" />
+    <meta name="date" content="2022-06-12" />
+    <script src="libs/header-attrs-2.14/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Quantitative data plan analysis
+]
+.subtitle[
+## REDRESS
+]
+.author[
+### Lucas Sempe / Yan Ding
+]
+.date[
+### 2022-06-12
+]
+
+---
+
+
+# Data Availability 
+
+--
+
+.pull-left[
+**SOURCE** &lt;br&gt;
+
+ROUTINE DATA &lt;br&gt;
+
+HEALTH FACILITY &lt;br&gt;
+
+LAB &lt;br&gt;
+
+PATIENT &lt;br&gt;
+
+HEALTH WORKER &lt;br&gt;
+
+TRAINING
+]
+
+--
+
+.pull-right[
+**STATUS**&lt;br&gt; 
+
+OK &lt;br&gt;
+
+OK &lt;br&gt;
+
+NOT ENOUGH OBSERVATIONS (n=?) &lt;br&gt;
+
+NOT ENOUGH OBSERVATIONS (n=6) &lt;br&gt;
+
+OK &lt;br&gt;
+
+TO BE COLLECTED
+]
+
+---
+# Magnitudes of REDRESS Case Management
+
+--
+
+**Objective**
+
+1) Describe magnitudes and trends over 1 year of case management done by REDRESS in 6 districts.
+
+--
+
+**Empirical strategy**
+
+1a) Descriptive statistics
+
+- number of cases detection, management and treatment
+  - trends in time
+  - comparison between counties/districts
+
+1b) Interactive map with number and type of cases per Health facility
+
+--
+
+**Data**
+
+- Health Facility survey tool (primary data collection) and HMIS
+
+**Sample**
+
+- 6 districts within 3 counties
+- all surveyed and non-surveyed health facilities in those areas
+
+---
+# Impact of REDRESS 
+
+--
+
+**Objective**
+
+2) Identify the causal impact of REDRESS project (what can be attributed to REDRESS) in terms of increase of case detection, treatment and management.
+
+3) Identify the causal impact of the REDRESS non-cash award (what can be attributed to REDRESS) in terms of increase of case detection, treatment and management.
+
+---
+# Impact of REDRESS 
+
+--
+
+**Empirical strategy**
+
+2) Case management
+
+- Difference-in-differences (known also as Controlled Before-After)
+
+- Detect differences between pre and post intervention between 2 groups (intervention and control counties)
+
+`\(\text{Y}= \alpha_{0} + \beta_{1} \text{Time} + \beta_{2} \text{REDRESS} + \beta_{3} \text{Time}*\text{REDRESS} + \beta_{4}\text{County} + {...} + \beta_{n}\text{covars} + \epsilon\)`
+
+where `\(\text{Y}\)` is the number of cases of skin NTDs **detected**, **treatment** and **managed**, such as:
+
+  -	number of cases clinically diagnosed at each health facility level
+
+  -	number of suspected patients referred from community
+
+  - of active case search through household visit
+
+  -	number of cases diagnosed in the early stages of the diseases (E.g.: Leprosy G0D, Buruli Cat 1, Lymphedema Stage 1 &amp; 2)
+
+The analysis is done at the health facility level.
+
+---
+# Impact of REDRESS 
+
+--
+
+**Empirical strategy**
+
+3) Non-cash award
+
+  - Difference-in-differences (known also as Controlled Before-After)
+  
+ - Detect differences between pre and post intervention between 2 groups (intervention and control counties)
+
+`$$\text{Y}= \alpha{_0} + \beta_{1} \text{Time} + \beta_{2} \text{Non-CASH} + \beta_{3} \text{Time}*\text{Non-CASH} + \text{County} +  \text{covars} + \epsilon$$`
+where `\(\text{Y}\)` is the number of cases of skin NTDs and `\(\text{Non-CASH}\)` corresponds to those facilities that were part of the scheme. 
+
+The analysis is done at the health facility level. 
+
+  
+---
+# Impact of REDRESS 
+--
+
+**Data**
+
+- HMIS
+
+- Non-cash award intervention
+
+--
+
+**Sample**
+
+- Treatment: 3 counties (Lofa, Grand Gedeh, Margibi)
+
+- Control: 4 counties (Nimba, Bomi, Sinoe, Cape Mount)
+
+- all health facilities in those areas
+
+.center[***Is there any difference in terms of SAMPLE between REDRESS and non-cash awards?***
+
+If ***YES***, we would be able to isolate the effects of both.
+
+IF ***NO***, the empirical strategy changes and we assess the role of non-cash awards as a contribution to the effects of REDRESS.
+]
+
+---
+# Impact of REDRESS 
+
+--
+
+- Difference-in-differences (known also as Controlled Before-After)
+
+&lt;img src="index_files/figure-html/unnamed-chunk-1-1.png" width="500px" /&gt;
+
+---
+# Health workers
+
+--
+
+**Objective**
+
+4) Describe attitudes towards NTDs, supervision and  tasks of health workers over time
+
+  
+5) Explore association between changes on attitudes towards NTDs (job satisfaction &amp; motivation), supervision and  tasks of health workers over time
+
+--
+
+**Empirical strategy**
+
+4) Descriptive statistics / Item Response Theory models
+
+- Disaggregation by sex, type of health worker position, counties, districts, etc.
+
+- Analysis over time
+
+- Comparison between Likert scales and percentage scales in Health workers
+
+
+---
+# Health workers
+
+--
+
+
+**Empirical strategy**
+
+
+5) Hierarchical linear modelling / Structural equation modelling
+
+- Associations between: 
+
+  - supervision (scales and raw variables)
+    
+  - stigma (scales and raw variables)
+    
+  - social distancing (scales and raw variables)
+    
+    - satisfaction (scales and raw variables)
+
+- Fixed effects at health facility, district and county levels
+    
+- Before-after intervention: 
+
+`$$\text{Y}= \alpha_{0j} + \beta_{1j} \text{Time}_{ij} +  {...} + \beta_{nj} \text{covars}_{ij}  + \epsilon_{ij}$$`
+where `\(\text{Y}\)` is the number of cases of skin NTDs **detected**, **treatment** and **managed**. Random intercepts and slopes are allowed at health facility level (if it converges).
+
+---
+# Health workers
+
+--
+
+**Data**
+
+- Health workers survey tool (primary data collection)
+
+--
+
+**Sample**
+
+- Treatment: 3 counties (Lofa, Grand Gedeh, Margibi)
+
+- health workers surveyed within facilities 
+
+---
+
+# Health finance
+
+--
+
+**Objective**
+
+6) Estimate the cost of REDRESS interventions
+
+--
+
+**Empirical strategy**
+
+6) Cost unit and cost centre analysis
+
+  - estimation of size of workforce
+  
+  - estimation of health workers time and salaries
+  
+  - estimation of intervention inputs:
+  
+    - case management
+    
+    - lab
+    
+    - mental health
+    
+    - training
+  
+---
+
+# Health finance
+
+--
+
+**Data**
+
+- Document revision from costs of interventions (MoH/ACT/REDRESS - documents and interviews)
+  
+- HMIS
+
+- Health facility tool
+
+- Health worker tool
+
+--
+
+**Sample**
+
+- Treatment: 3 counties (Lofa, Grand Gedeh, Margibi)
+
+- health facilities and health workers surveyed
+
+---
+# Training
+
+--
+
+**Objective**
+
+7) Describe pre- and post- training knowledge and comparison over time
+
+  
+8) Explore association between changes on training knowledge and attitudes towards NTDs, supervision and  tasks of health workers over time
+
+9) Explore association between changes on training knowledge and number of case detection, management and treatment
+
+--
+
+**Empirical strategy**
+
+7) Descriptive statistics
+
+- Disaggregation by sex, type of health worker position, counties, districts, etc.
+
+- Analysis over time
+
+
+---
+# Training
+
+--
+
+**Empirical strategy**
+
+8) Associations of knowledge assessment and: 
+
+    - supervision
+    
+    - stigma
+    
+    - social distancing
+    
+    - satisfaction
+    
+    - number of cases
+
+
+- Hierarchical linear modelling / Structural equation modelling
+
+- Fixed effects at health facility, district and county levels
+    
+`$$\text{Y}= \alpha_{0j} + \beta_{1j} \text{Time}_{ij} + 
+ \beta_{2j} \text{Assessment}_{j} + \beta_{3j} \text{Time}_{j}*\text{Assessment}_{j}    +
+{...} + \beta_{nj} \text{covars}_{ij}  + \epsilon_{ij}$$`
+
+where `\(\text{Y}\)` is the scales for **supervision**, **stigma**, **social distancing** and **satisfaction**. Random intercepts and slopes are allowed at health facility level (if it converges).
+
+---
+
+# Training
+
+--
+
+**Empirical strategy**
+
+9) Before-after gain in assessment: 
+
+Hierarchical linear modelling / Structural equation modelling
+
+- Fixed effects at health facility, district and county levels
+    
+- Before-after intervention: 
+
+`$$\text{Y}= \alpha_{0j} + {...} + \beta_{nj} \text{covars}_{ij}  + \epsilon_{ij}$$`
+
+where `\(\text{Y}\)` is the difference between test results as in `\(\Delta = Test_{End} - Test_{Baseline}\)`. Random intercepts and slopes are allowed at health facility level (if it converges).
+
+---
+# Training
+
+--
+
+**Data**
+
+- Pre and post training survey (primary data collection)
+
+- Health Facility survey tool (primary data collection) and HMIS
+
+- Health worker survey tool (primary data collection)
+
+--
+
+**Sample**
+
+- Treatment: 3 counties (Lofa, Grand Gedeh, Margibi)
+
+- health workers surveyed
+
+
+---
+# Risks and limitations
+
+- Lack of statistical power due to small number of observations or lack of variance on data
+
+ - ***Including more health facilities (from all counties) will provide stronger statistical power***
+
+  - ***If case management started in different periods, this can be addressed on the [empirical strategy](https://www.sciencedirect.com/science/article/pii/S0304407620303948?via%3Dihub)***
+
+  - ***Transit to [Bayesian difference-in-differences](https://www.tandfonline.com/doi/full/10.1080/2330443X.2019.1626310)***
+
+- Multiple comparisons
+
+ - **Use false discovery rate (FDR) procedures**
+ 
+- Not finding statistical differences / mixed results
+
+  - **Focus on qualitative data to understand reasons and processes**
+  
+  - **Focus on further descriptive analysis**
+
+---
+
+# What we can't do due to current data availability
+
+- Analysis on patients and carers (stigma, mental health, PHQ-9, GAD-7)
+
+- Out-of-pocket costs 
+
+- Analysis on lab work
+
+# Questions
+
+- Analysis on Faith healers?
+
+- Additional available secondary data (MoH, international agencies)
+
+- **ACTION: `\(\text{Ys}\)` have to be defined by MoH/REDRESS team and preregistered**
+
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
