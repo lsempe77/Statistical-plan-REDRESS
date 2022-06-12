@@ -1,0 +1,465 @@
+---
+title: "Quantitative data plan analysis"
+subtitle: "REDRESS"
+author: "Lucas Sempe / Yan Ding"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE, dpi = 300, out.width = '500px',
+                      warning = F, message = F,
+                      fig.showtext = TRUE)
+
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#1c5253",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Fira Mono"),
+  header_h1_font_size = "2.0rem",
+  footnote_font_size = "0.3em",
+  base_font_size = "20px",
+  text_font_size = ".85rem"
+)
+source("graphs.R")
+
+```
+# Data Availability 
+
+--
+
+.pull-left[
+**SOURCE** <br>
+
+ROUTINE DATA <br>
+
+HEALTH FACILITY <br>
+
+LAB <br>
+
+PATIENT <br>
+
+HEALTH WORKER <br>
+
+TRAINING
+]
+
+--
+
+.pull-right[
+**STATUS**<br> 
+
+OK <br>
+
+OK <br>
+
+NOT ENOUGH OBSERVATIONS (n=?) <br>
+
+NOT ENOUGH OBSERVATIONS (n=6) <br>
+
+OK <br>
+
+TO BE COLLECTED
+]
+
+---
+# Magnitudes of REDRESS Case Management
+
+--
+
+**Objective**
+
+1) Describe magnitudes and trends over 1 year of case management done by REDRESS in 6 districts.
+
+--
+
+**Empirical strategy**
+
+1a) Descriptive statistics
+
+- number of cases detection, management and treatment
+  - trends in time
+  - comparison between counties/districts
+
+1b) Interactive map with number and type of cases per Health facility
+
+--
+
+**Data**
+
+- Health Facility survey tool (primary data collection) and HMIS
+
+**Sample**
+
+- 6 districts within 3 counties
+- all surveyed and non-surveyed health facilities in those areas
+
+---
+# Impact of REDRESS 
+
+--
+
+**Objective**
+
+2) Identify the causal impact of REDRESS project (what can be attributed to REDRESS) in terms of increase of case detection, treatment and management.
+
+3) Identify the causal impact of the REDRESS non-cash award (what can be attributed to REDRESS) in terms of increase of case detection, treatment and management.
+
+---
+# Impact of REDRESS 
+
+--
+
+**Empirical strategy**
+
+2) Case management
+
+- Difference-in-differences (known also as Controlled Before-After)
+
+- Detect differences between pre and post intervention between 2 groups (intervention and control counties)
+
+$\text{Y}= \alpha_{0} + \beta_{1} \text{Time} + \beta_{2} \text{REDRESS} + \beta_{3} \text{Time}*\text{REDRESS} + \beta_{4}\text{County} + {...} + \beta_{n}\text{covars} + \epsilon$
+
+where $\text{Y}$ is the number of cases of skin NTDs **detected**, **treatment** and **managed**, such as:
+
+  -	number of cases clinically diagnosed at each health facility level
+
+  -	number of suspected patients referred from community
+
+  - of active case search through household visit
+
+  -	number of cases diagnosed in the early stages of the diseases (E.g.: Leprosy G0D, Buruli Cat 1, Lymphedema Stage 1 & 2)
+
+The analysis is done at the health facility level.
+
+---
+# Impact of REDRESS 
+
+--
+
+**Empirical strategy**
+
+3) Non-cash award
+
+  - Difference-in-differences (known also as Controlled Before-After)
+  
+ - Detect differences between pre and post intervention between 2 groups (intervention and control counties)
+
+$$\text{Y}= \alpha{_0} + \beta_{1} \text{Time} + \beta_{2} \text{Non-CASH} + \beta_{3} \text{Time}*\text{Non-CASH} + \text{County} +  \text{covars} + \epsilon$$
+where $\text{Y}$ is the number of cases of skin NTDs and $\text{Non-CASH}$ corresponds to those facilities that were part of the scheme. 
+
+The analysis is done at the health facility level. 
+
+  
+---
+# Impact of REDRESS 
+--
+
+**Data**
+
+- HMIS
+
+- Non-cash award intervention
+
+--
+
+**Sample**
+
+- Treatment: 3 counties (Lofa, Grand Gedeh, Margibi)
+
+- Control: 4 counties (Nimba, Bomi, Sinoe, Cape Mount)
+
+- all health facilities in those areas
+
+.center[***Is there any difference in terms of SAMPLE between REDRESS and non-cash awards?***
+
+If ***YES***, we would be able to isolate the effects of both.
+
+IF ***NO***, the empirical strategy changes and we assess the role of non-cash awards as a contribution to the effects of REDRESS.
+]
+
+---
+# Impact of REDRESS 
+
+--
+
+- Difference-in-differences (known also as Controlled Before-After)
+
+```{r, fig.showtext = TRUE}
+
+p + theme_xaringan()
+
+```
+
+---
+# Health workers
+
+--
+
+**Objective**
+
+4) Describe attitudes towards NTDs, supervision and  tasks of health workers over time
+
+  
+5) Explore association between changes on attitudes towards NTDs (job satisfaction & motivation), supervision and  tasks of health workers over time
+
+--
+
+**Empirical strategy**
+
+4) Descriptive statistics / Item Response Theory models
+
+- Disaggregation by sex, type of health worker position, counties, districts, etc.
+
+- Analysis over time
+
+- Comparison between Likert scales and percentage scales in Health workers
+
+
+---
+# Health workers
+
+--
+
+
+**Empirical strategy**
+
+
+5) Hierarchical linear modelling / Structural equation modelling
+
+- Associations between: 
+
+  - supervision (scales and raw variables)
+    
+  - stigma (scales and raw variables)
+    
+  - social distancing (scales and raw variables)
+    
+    - satisfaction (scales and raw variables)
+
+- Fixed effects at health facility, district and county levels
+    
+- Before-after intervention: 
+
+$$\text{Y}= \alpha_{0j} + \beta_{1j} \text{Time}_{ij} +  {...} + \beta_{nj} \text{covars}_{ij}  + \epsilon_{ij}$$
+where $\text{Y}$ is the number of cases of skin NTDs **detected**, **treatment** and **managed**. Random intercepts and slopes are allowed at health facility level (if it converges).
+
+---
+# Health workers
+
+--
+
+**Data**
+
+- Health workers survey tool (primary data collection)
+
+--
+
+**Sample**
+
+- Treatment: 3 counties (Lofa, Grand Gedeh, Margibi)
+
+- health workers surveyed within facilities 
+
+---
+
+# Health finance
+
+--
+
+**Objective**
+
+6) Estimate the cost of REDRESS interventions
+
+--
+
+**Empirical strategy**
+
+6) Cost unit and cost centre analysis
+
+  - estimation of size of workforce
+  
+  - estimation of health workers time and salaries
+  
+  - estimation of intervention inputs:
+  
+    - case management
+    
+    - lab
+    
+    - mental health
+    
+    - training
+  
+---
+
+# Health finance
+
+--
+
+**Data**
+
+- Document revision from costs of interventions (MoH/ACT/REDRESS - documents and interviews)
+  
+- HMIS
+
+- Health facility tool
+
+- Health worker tool
+
+--
+
+**Sample**
+
+- Treatment: 3 counties (Lofa, Grand Gedeh, Margibi)
+
+- health facilities and health workers surveyed
+
+---
+# Training
+
+--
+
+**Objective**
+
+7) Describe pre- and post- training knowledge and comparison over time
+
+  
+8) Explore association between changes on training knowledge and attitudes towards NTDs, supervision and  tasks of health workers over time
+
+9) Explore association between changes on training knowledge and number of case detection, management and treatment
+
+--
+
+**Empirical strategy**
+
+7) Descriptive statistics
+
+- Disaggregation by sex, type of health worker position, counties, districts, etc.
+
+- Analysis over time
+
+
+---
+# Training
+
+--
+
+**Empirical strategy**
+
+8) Associations of knowledge assessment and: 
+
+    - supervision
+    
+    - stigma
+    
+    - social distancing
+    
+    - satisfaction
+    
+    - number of cases
+
+
+- Hierarchical linear modelling / Structural equation modelling
+
+- Fixed effects at health facility, district and county levels
+    
+$$\text{Y}= \alpha_{0j} + \beta_{1j} \text{Time}_{ij} + 
+ \beta_{2j} \text{Assessment}_{j} + \beta_{3j} \text{Time}_{j}*\text{Assessment}_{j}    +
+{...} + \beta_{nj} \text{covars}_{ij}  + \epsilon_{ij}$$
+
+where $\text{Y}$ is the scales for **supervision**, **stigma**, **social distancing** and **satisfaction**. Random intercepts and slopes are allowed at health facility level (if it converges).
+
+---
+
+# Training
+
+--
+
+**Empirical strategy**
+
+9) Before-after gain in assessment: 
+
+Hierarchical linear modelling / Structural equation modelling
+
+- Fixed effects at health facility, district and county levels
+    
+- Before-after intervention: 
+
+$$\text{Y}= \alpha_{0j} + {...} + \beta_{nj} \text{covars}_{ij}  + \epsilon_{ij}$$
+
+where $\text{Y}$ is the difference between test results as in $\Delta = Test_{End} - Test_{Baseline}$. Random intercepts and slopes are allowed at health facility level (if it converges).
+
+---
+# Training
+
+--
+
+**Data**
+
+- Pre and post training survey (primary data collection)
+
+- Health Facility survey tool (primary data collection) and HMIS
+
+- Health worker survey tool (primary data collection)
+
+--
+
+**Sample**
+
+- Treatment: 3 counties (Lofa, Grand Gedeh, Margibi)
+
+- health workers surveyed
+
+
+---
+# Risks and limitations
+
+- Lack of statistical power due to small number of observations or lack of variance on data
+
+ - ***Including more health facilities (from all counties) will provide stronger statistical power***
+
+  - ***If case management started in different periods, this can be addressed on the [empirical strategy](https://www.sciencedirect.com/science/article/pii/S0304407620303948?via%3Dihub)***
+
+  - ***Transit to [Bayesian difference-in-differences](https://www.tandfonline.com/doi/full/10.1080/2330443X.2019.1626310)***
+
+- Multiple comparisons
+
+ - **Use false discovery rate (FDR) procedures**
+ 
+- Not finding statistical differences / mixed results
+
+  - **Focus on qualitative data to understand reasons and processes**
+  
+  - **Focus on further descriptive analysis**
+
+---
+
+# What we can't do due to current data availability
+
+- Analysis on patients and carers (stigma, mental health, PHQ-9, GAD-7)
+
+- Out-of-pocket costs 
+
+- Analysis on lab work
+
+# Questions
+
+- Analysis on Faith healers?
+
+- Additional available secondary data (MoH, international agencies)
+
+- **ACTION: $\text{Ys}$ have to be defined by MoH/REDRESS team and preregistered**
+
+
+
+
+

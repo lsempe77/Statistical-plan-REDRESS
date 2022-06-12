@@ -1,0 +1,11 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/912950/7cc009065f2c4a2581952e4654d8b926
+bundleId: https://api.rpubs.com/api/v1/document/912950/7cc009065f2c4a2581952e4654d8b926
+url: http://rpubs.com/lsempe/912950
+when: 1654865181.84782
+lastSyncTime: 1654865181.84783

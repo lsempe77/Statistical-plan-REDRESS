@@ -1,0 +1,285 @@
+---
+title: "Quantitative data plan analysis"
+subtitle: "REDRESS"
+author: "Lucas Sempe / Yan Ding"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE, dpi = 300, out.width = '500px',
+                      warning = F, message = F,
+                      fig.showtext = TRUE)
+
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#1c5253",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Fira Mono"),
+  header_h1_font_size = "2.0rem",
+  footnote_font_size = "0.3em",
+)
+source("graphs.R")
+
+```
+
+# REDRESS Case Management of skin NTDs across Liberia
+
+**Objective**
+
+Describe magnitudes and trends of case management done by REDRESS during 1 year.
+
+**Empirical strategy**
+
+1) Descriptive statistics
+
+- 
+
+
+---
+# Impact of REDRESS 
+
+**Objective**
+
+Identify the causal impact of REDRESS project (what can be attributed to REDRESS) in terms of increase of case detection, treatment and management.
+
+**Empirical strategy**
+
+2) Difference-in-differences (known also as Controlled Before-After)
+
+- Detect differences between pre and post intervention between 2 groups (intervention and control counties)
+
+$$\text{Y}= \alpha{_0} + \beta_{1} \text{Time} + \beta_{2} \text{REDRESS} + \beta_{3} \text{Time}*\text{REDRESS} + \text{County} +  \text{covars} + \epsilon$$
+where $\text{Y}$ is the number of cases of skin NTDs **detected**, **treatment** and **managed**.
+
+--
+
+**Data**
+
+- Primary data collection (Health Facility tool page 1 from ledger) and DHIS2
+
+- Analysis done at health facilities level
+
+---
+# Impact of REDRESS 
+
+- Difference-in-differences (known also as Controlled Before-After)
+
+```{r, fig.showtext = TRUE}
+
+p + theme_xaringan()
+
+```
+
+---
+# Impact of REDRESS 
+
+
+**ACTION: $\text{Ys}$ have to be defined by MoH/REDRESS team and preregistered**
+
+**Risks and limitations**
+
+- Lack of statistical power due to small number of observations or lack of variance on data
+
+ - ***Including more health facilities (from all counties) will provide stronger statistical power***
+
+  - ***If case management started in different periods, this can be addressed on the [empirical strategy](https://www.sciencedirect.com/science/article/pii/S0304407620303948?via%3Dihub)***
+
+  - ***Transit to [Bayesian difference-in-differences](https://www.tandfonline.com/doi/full/10.1080/2330443X.2019.1626310)***
+
+- Multiple comparisons
+
+ - **Use false discovery rate (FDR) procedures**
+ 
+- Not finding statistical differences / mixed results
+
+  -**Focus on qualitative data to understand reasons and processes**
+
+---
+# Health facilities (i)
+
+- descriptive analysis of NTDs cases at health facility level (& comparison over time) 
+ 
+    - differences between case-management and control districts in terms of number and type and management of cases
+    
+    - interactive map with number and type of cases per Health facility
+---
+
+
+# Health facilities (ii)
+
+- descriptive analysis of lab cases at health facility level (& comparison over time) 
+
+    - per disease
+    
+    10.1093/cid/ciy197
+  
+  
+---
+
+# Health facilities (iii)
+
+- incentives (Rozi)
+  
+  
+---
+# Health workers (i)
+
+- Descriptive analysis (& comparison over time) of health workers at health facility level
+  
+    - sex, age, income, education
+    
+    - supervision
+    
+    - stigma
+    
+    - social distancing
+ 
+  **differences between health workers**   
+
+---
+# Health workers (ii)
+
+- Comparison between Likert scales and percentage scales in Health workers
+
+    - supervision
+    - stigma
+    - social distancing
+    - satisfaction
+
+  **differences between sex, level of education, age** 
+    
+  **differences between case-management and control districts**
+
+---
+
+training before after
+
+---
+
+# Patients and carers (i)
+
+- Descriptive analysis (& comparison over time) of *patients* at health facility level
+
+    - sociodemographics: sex, age, wealth, education
+    - disease 
+    - PHQ-9 and GAD-7
+    - SARI Stigma
+
+  **correlations between PHQ, GAD and SARI**
+
+
+10.1093/trstmh/trw065 #interesting paper on delay of diagnosis and hospitalisation
+
+**can we get data from hospitalizations?**
+
+https://bmjopen.bmj.com/content/11/8/e046125.long
+---
+
+
+# Patients and carers (ii)
+
+- Descriptive analysis of *caregiver* information (& comparison over time) 
+    
+    - sociodemographics: sex, age, wealth, education
+    - burden of care (time, tasks, ) 
+    - PHQ-9 and GAD-7
+    - SARI Stigma
+    
+  **correlations between PHQ, GAD and SARI**
+    
+    https://doi.org/10.1371/journal.pntd.0009030
+    
+---
+
+# Patients and carers (iii)
+
+- Comparison between Likert scales and percentage scales in patient and carers
+
+    - PHQ-9
+    - GAD-7
+    - SARI Stigma
+
+  **differences between sex, level of education, age** 
+
+https://doi.org/10.1371/journal.pntd.0009454
+
+---
+
+# Patients and carers (iv)
+
+- Descriptive analysis of *patient* satisfaction (& comparison over time) 
+
+  **differences between sex, level of education, age** 
+   
+---
+
+# Health workers / finance
+
+- Descriptive analysis (& comparison over time) of CHAs/CHVs time and expenses
+
+  **differences between districts or counties?** 
+
+---
+
+# Patients and carers / finance (i)
+
+- Descriptive analysis: How much people spend with NTDs out-of-pocket expenditure (& comparison over time)?   (from patients' survey)
+
+    - expenditure type (medication, transportation, faith healers, hospitalisation food)
+
+- Descriptive analysis: How much people spend on faith healers (& comparison over time)? (from patients' survey)
+
+    - expenditure type
+    
+    10.1136/bmjopen-2017-020113
+    
+---
+
+# Patients and carers / finance (ii)
+
+- Descriptive analysis: How much people spend with mental health expenditure (& comparison over time)?   (from patients' survey)
+
+    - expenditure type (medication, transportation, faith healers, hospitalisation food)
+
+---
+
+# Health finance (i)
+
+- Cost of interventions
+
+    - out-of-pocket costs (patients tool)
+    - estimation of time/cost (health worker tool)
+    - costs of interventions (MoH/ACT/REDRESS - documents and interviews): case management, lab, mental health, training
+
+**Cost benefit analysis**
+
+---
+
+# Health finance (ii)
+
+- Issues with procurement, corruption, information flow, bureaucracy
+
+**Qualitative** (plan to be developed)
+
+---
+
+# Health finance (iii)
+
+- Systematic review of financing of SSSDs
+
+
+---
+
+# Training (i)
+
+- Impact of training?
+

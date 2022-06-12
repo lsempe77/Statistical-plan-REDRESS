@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Quantitative data plan analysis</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Lucas Sempe / Yan Ding" />
+    <meta name="date" content="2022-06-09" />
+    <script src="libs/header-attrs-2.14/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Quantitative data plan analysis
+]
+.subtitle[
+## REDRESS
+]
+.author[
+### Lucas Sempe / Yan Ding
+]
+.date[
+### 2022-06-09
+]
+
+---
+
+
+
+# REDRESS Case Management of skin NTDs across Liberia
+
+**Objective**
+
+Describe magnitudes and trends of case management done by REDRESS during 1 year.
+
+**Empirical strategy**
+
+1) Descriptive statistics
+
+- 
+
+
+---
+# Impact of REDRESS 
+
+**Objective**
+
+Identify the causal impact of REDRESS project (what can be attributed to REDRESS) in terms of increase of case detection, treatment and management.
+
+**Empirical strategy**
+
+2) Difference-in-differences (known also as Controlled Before-After)
+
+- Detect differences between pre and post intervention between 2 groups (intervention and control counties)
+
+`$$\text{Y}= \alpha{_0} + \beta_{1} \text{Time} + \beta_{2} \text{REDRESS} + \beta_{3} \text{Time}*\text{REDRESS} + \text{County} +  \text{covars} + \epsilon$$`
+where `\(\text{Y}\)` is the number of cases of skin NTDs **detected**, **treatment** and **managed**.
+
+--
+
+**Data**
+
+- Primary data collection (Health Facility tool page 1 from ledger) and DHIS2
+
+- Analysis done at health facilities level
+
+---
+# Impact of REDRESS 
+
+- Difference-in-differences (known also as Controlled Before-After)
+
+&lt;img src="data_plan_files/figure-html/unnamed-chunk-1-1.png" width="500px" /&gt;
+
+---
+# Impact of REDRESS 
+
+
+**ACTION: `\(\text{Ys}\)` have to be defined by MoH/REDRESS team and preregistered**
+
+**Risks and limitations**
+
+- Lack of statistical power due to small number of observations or lack of variance on data
+
+ - ***Including more health facilities (from all counties) will provide stronger statistical power***
+
+  - ***If case management started in different periods, this can be addressed on the [empirical strategy](https://www.sciencedirect.com/science/article/pii/S0304407620303948?via%3Dihub)***
+
+  - ***Transit to [Bayesian difference-in-differences](https://www.tandfonline.com/doi/full/10.1080/2330443X.2019.1626310)***
+
+- Multiple comparisons
+
+ - **Use false discovery rate (FDR) procedures**
+ 
+- Not finding statistical differences / mixed results
+
+  -**Focus on qualitative data to understand reasons and processes**
+
+---
+# Health facilities (i)
+
+- descriptive analysis of NTDs cases at health facility level (&amp; comparison over time) 
+ 
+    - differences between case-management and control districts in terms of number and type and management of cases
+    
+    - interactive map with number and type of cases per Health facility
+---
+
+
+# Health facilities (ii)
+
+- descriptive analysis of lab cases at health facility level (&amp; comparison over time) 
+
+    - per disease
+    
+    10.1093/cid/ciy197
+  
+  
+---
+
+# Health facilities (iii)
+
+- incentives (Rozi)
+  
+  
+---
+# Health workers (i)
+
+- Descriptive analysis (&amp; comparison over time) of health workers at health facility level
+  
+    - sex, age, income, education
+    
+    - supervision
+    
+    - stigma
+    
+    - social distancing
+ 
+  **differences between health workers**   
+
+---
+# Health workers (ii)
+
+- Comparison between Likert scales and percentage scales in Health workers
+
+    - supervision
+    - stigma
+    - social distancing
+    - satisfaction
+
+  **differences between sex, level of education, age** 
+    
+  **differences between case-management and control districts**
+
+---
+
+training before after
+
+---
+
+# Patients and carers (i)
+
+- Descriptive analysis (&amp; comparison over time) of *patients* at health facility level
+
+    - sociodemographics: sex, age, wealth, education
+    - disease 
+    - PHQ-9 and GAD-7
+    - SARI Stigma
+
+  **correlations between PHQ, GAD and SARI**
+
+
+10.1093/trstmh/trw065 #interesting paper on delay of diagnosis and hospitalisation
+
+**can we get data from hospitalizations?**
+
+https://bmjopen.bmj.com/content/11/8/e046125.long
+---
+
+
+# Patients and carers (ii)
+
+- Descriptive analysis of *caregiver* information (&amp; comparison over time) 
+    
+    - sociodemographics: sex, age, wealth, education
+    - burden of care (time, tasks, ) 
+    - PHQ-9 and GAD-7
+    - SARI Stigma
+    
+  **correlations between PHQ, GAD and SARI**
+    
+    https://doi.org/10.1371/journal.pntd.0009030
+    
+---
+
+# Patients and carers (iii)
+
+- Comparison between Likert scales and percentage scales in patient and carers
+
+    - PHQ-9
+    - GAD-7
+    - SARI Stigma
+
+  **differences between sex, level of education, age** 
+
+https://doi.org/10.1371/journal.pntd.0009454
+
+---
+
+# Patients and carers (iv)
+
+- Descriptive analysis of *patient* satisfaction (&amp; comparison over time) 
+
+  **differences between sex, level of education, age** 
+   
+---
+
+# Health workers / finance
+
+- Descriptive analysis (&amp; comparison over time) of CHAs/CHVs time and expenses
+
+  **differences between districts or counties?** 
+
+---
+
+# Patients and carers / finance (i)
+
+- Descriptive analysis: How much people spend with NTDs out-of-pocket expenditure (&amp; comparison over time)?   (from patients' survey)
+
+    - expenditure type (medication, transportation, faith healers, hospitalisation food)
+
+- Descriptive analysis: How much people spend on faith healers (&amp; comparison over time)? (from patients' survey)
+
+    - expenditure type
+    
+    10.1136/bmjopen-2017-020113
+    
+---
+
+# Patients and carers / finance (ii)
+
+- Descriptive analysis: How much people spend with mental health expenditure (&amp; comparison over time)?   (from patients' survey)
+
+    - expenditure type (medication, transportation, faith healers, hospitalisation food)
+
+---
+
+# Health finance (i)
+
+- Cost of interventions
+
+    - out-of-pocket costs (patients tool)
+    - estimation of time/cost (health worker tool)
+    - costs of interventions (MoH/ACT/REDRESS - documents and interviews): case management, lab, mental health, training
+
+**Cost benefit analysis**
+
+---
+
+# Health finance (ii)
+
+- Issues with procurement, corruption, information flow, bureaucracy
+
+**Qualitative** (plan to be developed)
+
+---
+
+# Health finance (iii)
+
+- Systematic review of financing of SSSDs
+
+
+---
+
+# Training (i)
+
+- Impact of training?
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

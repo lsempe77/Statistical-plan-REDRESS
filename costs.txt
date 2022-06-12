@@ -1,0 +1,33 @@
+Costing
+
+$ Cross cutting
+
+-training (time, materials, transportation, daily sustainance allowance), printing triaing resources, hall rentals, IPC resourses 
+
+$ pathway 1
+
+Lab:
+	-Procurement lab reagents, disposals for labs
+	-Training for lab workers
+	-Time lab workers
+	-supervision for labs
+
+
+-Treatment: Wounds care, medication
+	- Supervision for wound management
+
+-Case management: fuel, case finder package (rain gear, rain boots, job aides {booklets}), health facility ledger (print), patient treatment charts (print), algorithm (print)
+	-supervision for case finding
+
+	- out of pocket costs (patient survey)
+	- health workers time * salary (hw survey)
+
+$ pathway 2
+- Supervision
+
+$ pathway3
+
+- mental health training
+- peer support groups (time, fuel, printing)
+- case referrals by traditional and faith healers (transportation, payment, accomodation, feeding => patient survey)
+
